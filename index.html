@@ -174,25 +174,9 @@
         <h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h1><p>感知机是神经网络和支持向量机的基础</p>
 <h1 id="2-感知机原理"><a href="#2-感知机原理" class="headerlink" title="2.感知机原理"></a>2.感知机原理</h1><p>感知机是二分类的线性模型，其输入是实例的特征向量，输出的是事例的类别，分别是+1和-1，属于判别模型。</p>
 <p>假设训练数据集是线性可分的，感知机学习的目标是求得一个能够将训练数据集<strong>正实例点和负实例点完全正确分开的分离超平面</strong>。如果是非线性可分的数据，则最后无法获得超平面，如果非线性可分，则最后无法获得超平面。</p>
-<h3 id="2-1点到直线距离"><a href="#2-1点到直线距离" class="headerlink" title="2.1点到直线距离"></a>2.1点到直线距离</h3><p>公式中直线方程为Ax+By+C=0，点P的坐标为(x0,y0)。</p>
-<p><img src="/2020/04/10/%E6%84%9F%E7%9F%A5%E6%9C%BA%E5%8E%9F%E7%90%86/image-20200412223306274.png" alt="image-20200412223306274"></p>
-<h3 id="2-2样本到超平面的距离"><a href="#2-2样本到超平面的距离" class="headerlink" title="2.2样本到超平面的距离"></a>2.2样本到超平面的距离</h3><p>我们假设超平面是h = w⋅x+b，其中w=(w0,w1,…wm),x=(x0,x1,…xm)，样本点x′到超平面的距离如下：<img src="/img/image-20200412223607513.png" alt="image-20200412223607513"></p>
-<h2 id="3感知机模型"><a href="#3感知机模型" class="headerlink" title="3感知机模型"></a>3感知机模型</h2><p><img src="/2020/04/10/%E6%84%9F%E7%9F%A5%E6%9C%BA%E5%8E%9F%E7%90%86/image-20200412223859219.png" alt="image-20200412223859219"></p>
-<h3 id="3-1损失函数"><a href="#3-1损失函数" class="headerlink" title="3.1损失函数"></a>3.1损失函数</h3><p>所有样本到超平面距离之和</p>
-<p><img src="/img/image-20200412224634999.png" alt="image-20200412224634999"></p>
-<p>可以不考虑1/|w|简化得到</p>
-<p><img src="/img/image-20200412224802122.png" alt="image-20200412224802122"></p>
-<h2 id="4感知机学习算法"><a href="#4感知机学习算法" class="headerlink" title="4感知机学习算法"></a>4感知机学习算法</h2><p>感知机学习算法是对上述损失函数进行极小化，求得w和b。但是用普通的基于所有样本的梯度和的均值的批量梯度下降法（BGD）是行不通的，原因在于我们的损失函数里面有限定，<strong>只有误分类的M集合里面的样本才能参与损失函数的优化</strong>。所以我们不能用最普通的批量梯度下降,只能采用随机梯度下降（SGD）。目标函数如下：</p>
-<p><img src="/img/image-20200412225713314.png" alt="image-20200412225713314"></p>
-<h3 id="4-1原始形式算法"><a href="#4-1原始形式算法" class="headerlink" title="4.1原始形式算法"></a>4.1原始形式算法</h3><p><img src="/img/image-20200412230723945.png" alt="image-20200412230723945"></p>
-<h3 id="4-2对偶形式算法"><a href="#4-2对偶形式算法" class="headerlink" title="4.2对偶形式算法"></a>4.2对偶形式算法</h3><p><img src="/img/image-20200412230810573.png" alt="image-20200412230810573"></p>
-<h3 id="4-3原始形式和对偶形式的选择"><a href="#4-3原始形式和对偶形式的选择" class="headerlink" title="4.3原始形式和对偶形式的选择"></a>4.3原始形式和对偶形式的选择</h3><ul>
-<li>在向量维数（特征数）过高时，计算内积非常耗时，应选择对偶形式算法加速。</li>
-<li>在向量个数（样本数）过多时，每次计算累计和就没有必要，应选择原始算法。</li>
-<li>关于对偶形式的理解<a href="https://www.zhihu.com/question/26526858" target="_blank" rel="noopener">https://www.zhihu.com/question/26526858</a></li>
-</ul>
-<h2 id="6小结"><a href="#6小结" class="headerlink" title="6小结"></a>6小结</h2><p>感知机算法是一个简单易懂的算法，自己编程实现也不太难。前面提到它是很多算法的鼻祖，比如<strong>支持向量机算法，神经网络与深度学习</strong>。因此虽然它现在已经不是一个在实践中广泛运用的算法，还是值得好好的去研究一下。感知机算法对偶形式为什么在实际运用中比原始形式快，也值得好好去体会。</p>
-
+        
+          <a class="article-more-a" href="/2020/04/10/%E6%84%9F%E7%9F%A5%E6%9C%BA%E5%8E%9F%E7%90%86/#more">more >></a>
+        
       
 
       
@@ -811,6 +795,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">双向链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">单向环形链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
@@ -827,19 +823,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">双向链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">环形链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">单向环形链表</a>
+                <a href="javascript:void(0)" class="js-tag color4">感知机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -847,7 +831,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">感知机</a>
+                <a href="javascript:void(0)" class="js-tag color5">环形链表</a>
               </li>
             
             <div class="clearfix"></div>

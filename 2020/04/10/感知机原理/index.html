@@ -8,27 +8,27 @@
   <link rel="dns-prefetch" href="https://vavavav.github.io">
   <title>感知机原理 | vavavav</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="1.前言感知机是神经网络和支持向量机的基础 2.感知机原理感知机是二分类的线性模型，其输入是实例的特征向量，输出的是事例的类别，分别是+1和-1，属于判别模型。 假设训练数据集是线性可分的，感知机学习的目标是求得一个能够将训练数据集正实例点和负实例点完全正确分开的分离超平面。如果是非线性可分的数据，则最后无法获得超平面，如果非线性可分，则最后无法获得超平面。 2.1点到直线距离公式中直线方程为Ax">
+  <meta name="description" content="1.前言感知机是神经网络和支持向量机的基础 2.感知机原理感知机是二分类的线性模型，其输入是实例的特征向量，输出的是事例的类别，分别是+1和-1，属于判别模型。 假设训练数据集是线性可分的，感知机学习的目标是求得一个能够将训练数据集正实例点和负实例点完全正确分开的分离超平面。如果是非线性可分的数据，则最后无法获得超平面，如果非线性可分，则最后无法获得超平面。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="感知机原理">
 <meta property="og:url" content="https://vavavav.github.io/2020/04/10/%E6%84%9F%E7%9F%A5%E6%9C%BA%E5%8E%9F%E7%90%86/index.html">
 <meta property="og:site_name" content="vavavav">
-<meta property="og:description" content="1.前言感知机是神经网络和支持向量机的基础 2.感知机原理感知机是二分类的线性模型，其输入是实例的特征向量，输出的是事例的类别，分别是+1和-1，属于判别模型。 假设训练数据集是线性可分的，感知机学习的目标是求得一个能够将训练数据集正实例点和负实例点完全正确分开的分离超平面。如果是非线性可分的数据，则最后无法获得超平面，如果非线性可分，则最后无法获得超平面。 2.1点到直线距离公式中直线方程为Ax">
+<meta property="og:description" content="1.前言感知机是神经网络和支持向量机的基础 2.感知机原理感知机是二分类的线性模型，其输入是实例的特征向量，输出的是事例的类别，分别是+1和-1，属于判别模型。 假设训练数据集是线性可分的，感知机学习的目标是求得一个能够将训练数据集正实例点和负实例点完全正确分开的分离超平面。如果是非线性可分的数据，则最后无法获得超平面，如果非线性可分，则最后无法获得超平面。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://vavavav.github.io/2020/04/10/%E6%84%9F%E7%9F%A5%E6%9C%BA%E5%8E%9F%E7%90%86/image-20200412223306274.png">
+<meta property="og:image" content="https://vavavav.github.io/img/image-20200412223306274.png">
 <meta property="og:image" content="https://vavavav.github.io/img/image-20200412223607513.png">
-<meta property="og:image" content="https://vavavav.github.io/2020/04/10/%E6%84%9F%E7%9F%A5%E6%9C%BA%E5%8E%9F%E7%90%86/image-20200412223859219.png">
+<meta property="og:image" content="https://vavavav.github.io/img/image-20200412223859219.png">
 <meta property="og:image" content="https://vavavav.github.io/img/image-20200412224634999.png">
 <meta property="og:image" content="https://vavavav.github.io/img/image-20200412224802122.png">
 <meta property="og:image" content="https://vavavav.github.io/img/image-20200412225713314.png">
 <meta property="og:image" content="https://vavavav.github.io/img/image-20200412230723945.png">
 <meta property="og:image" content="https://vavavav.github.io/img/image-20200412230810573.png">
 <meta property="article:published_time" content="2020-04-10T02:30:50.000Z">
-<meta property="article:modified_time" content="2020-04-13T02:34:16.990Z">
+<meta property="article:modified_time" content="2020-04-13T02:36:08.948Z">
 <meta property="article:author" content="wei">
 <meta property="article:tag" content="感知机">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://vavavav.github.io/2020/04/10/%E6%84%9F%E7%9F%A5%E6%9C%BA%E5%8E%9F%E7%90%86/image-20200412223306274.png">
+<meta name="twitter:image" content="https://vavavav.github.io/img/image-20200412223306274.png">
   
     <link rel="alternative" href="/atom.xml" title="vavavav" type="application/atom+xml">
   
@@ -183,10 +183,12 @@
         <h1 id="1-前言"><a href="#1-前言" class="headerlink" title="1.前言"></a>1.前言</h1><p>感知机是神经网络和支持向量机的基础</p>
 <h1 id="2-感知机原理"><a href="#2-感知机原理" class="headerlink" title="2.感知机原理"></a>2.感知机原理</h1><p>感知机是二分类的线性模型，其输入是实例的特征向量，输出的是事例的类别，分别是+1和-1，属于判别模型。</p>
 <p>假设训练数据集是线性可分的，感知机学习的目标是求得一个能够将训练数据集<strong>正实例点和负实例点完全正确分开的分离超平面</strong>。如果是非线性可分的数据，则最后无法获得超平面，如果非线性可分，则最后无法获得超平面。</p>
+<a id="more"></a>
+
 <h3 id="2-1点到直线距离"><a href="#2-1点到直线距离" class="headerlink" title="2.1点到直线距离"></a>2.1点到直线距离</h3><p>公式中直线方程为Ax+By+C=0，点P的坐标为(x0,y0)。</p>
-<p><img src="/2020/04/10/%E6%84%9F%E7%9F%A5%E6%9C%BA%E5%8E%9F%E7%90%86/image-20200412223306274.png" alt="image-20200412223306274"></p>
+<p><img src="/img/image-20200412223306274.png" alt="image-20200412223306274"></p>
 <h3 id="2-2样本到超平面的距离"><a href="#2-2样本到超平面的距离" class="headerlink" title="2.2样本到超平面的距离"></a>2.2样本到超平面的距离</h3><p>我们假设超平面是h = w⋅x+b，其中w=(w0,w1,…wm),x=(x0,x1,…xm)，样本点x′到超平面的距离如下：<img src="/img/image-20200412223607513.png" alt="image-20200412223607513"></p>
-<h2 id="3感知机模型"><a href="#3感知机模型" class="headerlink" title="3感知机模型"></a>3感知机模型</h2><p><img src="/2020/04/10/%E6%84%9F%E7%9F%A5%E6%9C%BA%E5%8E%9F%E7%90%86/image-20200412223859219.png" alt="image-20200412223859219"></p>
+<h2 id="3感知机模型"><a href="#3感知机模型" class="headerlink" title="3感知机模型"></a>3感知机模型</h2><p><img src="/img/image-20200412223859219.png" alt="image-20200412223859219"></p>
 <h3 id="3-1损失函数"><a href="#3-1损失函数" class="headerlink" title="3.1损失函数"></a>3.1损失函数</h3><p>所有样本到超平面距离之和</p>
 <p><img src="/img/image-20200412224634999.png" alt="image-20200412224634999"></p>
 <p>可以不考虑1/|w|简化得到</p>
@@ -466,6 +468,18 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">单链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">双向链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color2">单向环形链表</a>
+              </li>
+             
+              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color5">数据结构</a>
               </li>
              
@@ -482,19 +496,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">单链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">双向链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">环形链表</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color2">单向环形链表</a>
+                <a href="javascript:void(0)" class="js-tag color4">感知机</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -502,7 +504,7 @@ return o(i(t),arguments.length<2?void 0:u(arguments[1]))}})},function(t,n,r){var
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">感知机</a>
+                <a href="javascript:void(0)" class="js-tag color5">环形链表</a>
               </li>
             
             <div class="clearfix"></div>
