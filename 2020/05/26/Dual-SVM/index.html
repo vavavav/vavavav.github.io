@@ -8,13 +8,14 @@
   <link rel="dns-prefetch" href="https://vavavav.github.io">
   <title>Dual_SVM | vavavav</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="Motivation of Dual SVM对于非线性SVM，我们通常可以使用非线性变换将变量从x域转换到z域中。然后，在z域中，根据上一节课的内容，使用线性SVM解决问题即可。上一节课我们说过，使用SVM得到large-margin，减少了有效的VC Dimension，限制了模型复杂度；另一方面，使用特征转换，目的是让模型更复杂，减小Ein。所以说，非线性SVM是把这两者目的结合起来，平衡这两">
+  <meta name="description" content="Motivation of Dual SVM">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Dual_SVM">
 <meta property="og:url" content="https://vavavav.github.io/2020/05/26/Dual-SVM/index.html">
 <meta property="og:site_name" content="vavavav">
-<meta property="og:description" content="Motivation of Dual SVM对于非线性SVM，我们通常可以使用非线性变换将变量从x域转换到z域中。然后，在z域中，根据上一节课的内容，使用线性SVM解决问题即可。上一节课我们说过，使用SVM得到large-margin，减少了有效的VC Dimension，限制了模型复杂度；另一方面，使用特征转换，目的是让模型更复杂，减小Ein。所以说，非线性SVM是把这两者目的结合起来，平衡这两">
+<meta property="og:description" content="Motivation of Dual SVM">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://vavavav.github.io/img/image-20200526160804053.png">
 <meta property="og:image" content="https://vavavav.github.io/img/image-20200526154851332.png">
 <meta property="og:image" content="https://vavavav.github.io/img/image-20200526154942900.png">
 <meta property="og:image" content="https://vavavav.github.io/img/image-20200526155054495.png">
@@ -35,12 +36,12 @@
 <meta property="og:image" content="https://vavavav.github.io/img/image-20200526155958998.png">
 <meta property="og:image" content="https://vavavav.github.io/img/image-20200526160034800.png">
 <meta property="article:published_time" content="2020-05-26T07:42:04.000Z">
-<meta property="article:modified_time" content="2020-05-26T08:01:34.529Z">
+<meta property="article:modified_time" content="2020-05-26T08:10:43.565Z">
 <meta property="article:author" content="wei">
 <meta property="article:tag" content="SVM">
 <meta property="article:tag" content="dual">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://vavavav.github.io/img/image-20200526154851332.png">
+<meta name="twitter:image" content="https://vavavav.github.io/img/image-20200526160804053.png">
   
     <link rel="alternative" href="/atom.xml" title="vavavav" type="application/atom+xml">
   
@@ -192,7 +193,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Motivation-of-Dual-SVM"><a href="#Motivation-of-Dual-SVM" class="headerlink" title="Motivation of Dual SVM"></a><strong>Motivation of Dual SVM</strong></h1><p>对于非线性SVM，我们通常可以使用非线性变换将变量从x域转换到z域中。然后，在z域中，根据上一节课的内容，使用线性SVM解决问题即可。上一节课我们说过，使用SVM得到large-margin，减少了有效的VC Dimension，限制了模型复杂度；另一方面，使用特征转换，目的是让模型更复杂，减小Ein。所以说，非线性SVM是把这两者目的结合起来，平衡这两者的关系。那么，特征转换下，求解QP问题在z域中的维度设为d^<del>^+1，如果模型越复杂，则d^</del>^+1越大，相应求解这个QP问题也变得很困难。当d^<del>^无限大的时候，问题将会变得难以求解，那么有没有什么办法可以解决这个问题呢？一种方法就是使SVM的求解过程不依赖d^</del>^，这就是我们本节课所要讨论的主要内容。</p>
+        <h1 id="Motivation-of-Dual-SVM"><a href="#Motivation-of-Dual-SVM" class="headerlink" title="Motivation of Dual SVM"></a><strong>Motivation of Dual SVM</strong></h1><p><img src="/img/image-20200526160804053.png" alt="image-20200526160804053"></p>
 <a id="more"></a>
 
 <p><img src="/img/image-20200526154851332.png" alt="image-20200526154851332"></p>

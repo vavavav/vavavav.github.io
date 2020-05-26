@@ -171,7 +171,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h1 id="Motivation-of-Dual-SVM"><a href="#Motivation-of-Dual-SVM" class="headerlink" title="Motivation of Dual SVM"></a><strong>Motivation of Dual SVM</strong></h1><p>对于非线性SVM，我们通常可以使用非线性变换将变量从x域转换到z域中。然后，在z域中，根据上一节课的内容，使用线性SVM解决问题即可。上一节课我们说过，使用SVM得到large-margin，减少了有效的VC Dimension，限制了模型复杂度；另一方面，使用特征转换，目的是让模型更复杂，减小Ein。所以说，非线性SVM是把这两者目的结合起来，平衡这两者的关系。那么，特征转换下，求解QP问题在z域中的维度设为d^<del>^+1，如果模型越复杂，则d^</del>^+1越大，相应求解这个QP问题也变得很困难。当d^<del>^无限大的时候，问题将会变得难以求解，那么有没有什么办法可以解决这个问题呢？一种方法就是使SVM的求解过程不依赖d^</del>^，这就是我们本节课所要讨论的主要内容。</p>
+        <h1 id="Motivation-of-Dual-SVM"><a href="#Motivation-of-Dual-SVM" class="headerlink" title="Motivation of Dual SVM"></a><strong>Motivation of Dual SVM</strong></h1><p><img src="/img/image-20200526160804053.png" alt="image-20200526160804053"></p>
         
           <a class="article-more-a" href="/2020/05/26/Dual-SVM/#more">more >></a>
         
